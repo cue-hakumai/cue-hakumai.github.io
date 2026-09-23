@@ -123,9 +123,13 @@
             body {
                 padding: 16px;
                 box-sizing: border-box;
+                /* URLバーをスクロールで隠せるように余白を設ける */
+                min-height: 150vh;
             }
 
             .container {
+                position: sticky;
+                top: 16px;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto 1fr;
@@ -133,7 +137,8 @@
                 padding: 30px;
                 max-width: 100%;
                 width: 100%;
-                height: calc(100vh - 32px);
+                height: calc(100vh - 32px); /* フォールバック */
+                height: calc(100dvh - 32px);
                 box-sizing: border-box;
                 margin: 0;
             }
