@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己紹介</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --card-bg: #fff;
+            --primary-color: #14a00f;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 2.5em;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .account {
+            font-size: 1.8em;
+            color: #666;
+            margin-top: 10px;
+            font-family: Futura, sans-serif;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .qr-section {
+            text-align: center;
+        }
+
+        .favorites-section h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .favorites-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .favorites-list li {
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .links-section h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .links-list li a {
+            display: block;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid #ddd;
+            transition: background 0.2s;
+        }
+
+        .links-list li a:hover {
+            background: #eee;
+        }
+
+        /* 名刺モード (携帯横画面) */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .links-section {
+                display: none;
+            }
+
+            body {
+                padding: 16px;
+                box-sizing: border-box;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto 1fr;
+                gap: 15px 30px;
+                padding: 30px;
+                max-width: 100%;
+                width: 100%;
+                height: calc(100vh - 32px);
+                box-sizing: border-box;
+                margin: 0;
+            }
+
+            .header {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                text-align: left;
+            }
+
+            .content {
+                display: contents;
+            }
+
+            .qr-section {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                text-align: left;
+                display: flex;
+                align-items: flex-end;
+                min-height: 0;
+            }
+
+            .qr-section img {
+                height: 100%;
+                width: auto;
+                max-width: 100%;
+                object-fit: contain;
+                object-position: left bottom;
+            }
+
+            .favorites-section {
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
+                border-left: 2px solid var(--primary-color);
+                padding-left: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .favorites-section h3 {
+                margin-top: 0;
+                font-size: 1.1em;
+            }
+
+            .favorites-list li {
+                padding: 8px 12px;
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="name">緑のはくまい</h1>
+            <div class="account">@cue_hakumai</div>
+        </div>
+
+        <div class="content">
+            <div class="qr-section">
+                <img src="QR.png" alt="QR Code" width="300" height="300">
+            </div>
+
+            <div class="favorites-section">
+                <h3>Favorites</h3>
+                <ul class="favorites-list">
+                    <li>CUE!</li>
+                    <li>fhána</li>
+                    <li>CHiCO with HoneyWorks</li>
+                    <li>梶浦由記</li>
+                </ul>
+            </div>
+
+            <div class="links-section">
+                <h3>Links</h3>
+                <ul class="links-list">
+                    <li><a href="https://note.com/cue_hakumai" target="_blank" rel="noopener noreferrer">note</a>
+                    </li>
+                    <li><a href="https://www.eventernote.com/users/hakumai" target="_blank"
+                            rel="noopener noreferrer">Eventernote</a></li>
+                    <li><a href="https://yuta-shuh.github.io/cue-card/" target="_blank"
+                            rel="noopener noreferrer">CueCard</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
