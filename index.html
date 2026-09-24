@@ -194,6 +194,87 @@
                 font-size: 0.9em;
                 margin-bottom: 8px;
             }
+
+            body.egg-mode {
+                padding: 16px;
+                min-height: 100vh;
+                min-height: 100dvh;
+            }
+
+            .egg-container {
+                max-width: none;
+                height: 100%;
+            }
+
+            .egg-image {
+                width: auto;
+                height: 100%;
+                max-height: calc(100vh - 32px);
+                max-height: calc(100dvh - 32px);
+                max-width: 100%;
+            }
+        }
+
+        .cue-trigger {
+            cursor: help;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* イースターエッグ (egg.jpg) 表示用 */
+        body.egg-mode {
+            min-height: 100vh;
+            min-height: 100dvh;
+            height: 100vh;
+            height: 100dvh;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        body.egg-mode .container {
+            display: none !important;
+        }
+
+        .egg-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            animation: eggFadeIn 0.3s ease-out;
+        }
+
+        body.egg-mode .egg-container {
+            display: flex;
+        }
+
+        .egg-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            max-height: calc(100vh - 40px);
+            max-height: calc(100dvh - 40px);
+            aspect-ratio: 1242 / 750;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            display: block;
+        }
+
+        @keyframes eggFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -213,7 +294,7 @@
             <div class="favorites-section">
                 <h3>Favorites</h3>
                 <ul class="favorites-list">
-                    <li>CUE!</li>
+                    <li id="cue-item" class="cue-trigger">CUE!</li>
                     <li>fhána</li>
                     <li>CHiCO with HoneyWorks</li>
                     <li>梶浦由記</li>
@@ -245,6 +326,28 @@
             </div>
         </div>
     </div>
+
+    <div class="egg-container" id="egg-card">
+        <img src="egg.jpg" alt="CUE! 名刺" class="egg-image">
+    </div>
+
+    <script>
+        // egg.jpg のプリロード
+        const preloadEgg = new Image();
+        preloadEgg.src = 'egg.jpg';
+
+        // CUE! を3回クリックでegg表示
+        const cueItem = document.getElementById('cue-item');
+        let clickCount = 0;
+        if (cueItem) {
+            cueItem.addEventListener('click', () => {
+                clickCount++;
+                if (clickCount >= 3) {
+                    document.body.classList.add('egg-mode');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
