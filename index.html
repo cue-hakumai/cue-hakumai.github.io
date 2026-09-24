@@ -70,6 +70,7 @@
             color: var(--primary-color);
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .favorites-list {
@@ -81,7 +82,6 @@
             background: #f9f9f9;
             margin-bottom: 10px;
             padding: 10px 15px;
-            border-radius: 6px;
             border-left: 4px solid var(--primary-color);
         }
 
@@ -89,6 +89,7 @@
             color: var(--primary-color);
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .links-list {
@@ -103,7 +104,6 @@
             display: block;
             background: #f9f9f9;
             padding: 10px 15px;
-            border-radius: 6px;
             text-decoration: none;
             color: var(--text-color);
             border: 1px solid #ddd;
@@ -131,7 +131,7 @@
                 position: sticky;
                 top: 16px;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 2fr;
                 grid-template-rows: auto 1fr;
                 gap: 15px 30px;
                 padding: 30px;
@@ -177,7 +177,7 @@
             .favorites-section {
                 grid-column: 2 / 3;
                 grid-row: 1 / 3;
-                border-left: 2px solid var(--primary-color);
+                border-left: 2px dotted var(--primary-color);
                 padding-left: 30px;
                 display: flex;
                 flex-direction: column;
